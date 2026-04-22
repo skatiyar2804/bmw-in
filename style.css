@@ -1,0 +1,217 @@
+/* ── MODELS SECTION ── */
+.models {
+  padding: 100px 60px;
+  background-color: #0a0a0a;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-sub {
+  color: #888;
+  letter-spacing: 3px;
+  margin-bottom: 60px;
+}
+
+/* Row of cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;           /* Wraps to next line on smaller screens */
+}
+
+/* Each card */
+.card {
+  background-color: #141414;
+  width: 300px;
+  border: 1px solid #222;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+  cursor: pointer;             /* Shows hand cursor on entire card */
+}
+
+.card:nth-child(2) img {
+    object-position: center top;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #555;
+}
+
+/* Keeps hover smooth — prevents gap glitch */
+.card * {
+  pointer-events: none;        /* Only the card itself triggers hover */
+}
+
+.card .card-btn {
+  pointer-events: auto;        /* But keep the button still clickable */
+}
+
+/* Car image inside card */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;         /* Crops image neatly to fit */
+}
+
+/* Text area below image */
+.card-info {
+  padding: 20px;
+}
+
+.card-info h3 {
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.card-info p {
+  font-size: 13px;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Discover button on card */
+.card-btn {
+  padding: 10px 28px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #555;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}/* This is your style file — it controls how everything looks */
+
+/* The whole page */
+body {
+  background-color: #0a0a0a;  /* Near-black background like BMW's website */
+  color: #ffffff;              /* White text */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* The big heading */
+h1 {
+  font-size: 48px;
+  letter-spacing: 6px;        /* Spreads the letters apart — very BMW */
+  margin-top: 80px;
+  text-transform: uppercase;  /* Makes text ALL CAPS automatically */
+}
+
+/* The paragraph below it */
+p {
+  font-size: 18px;
+  color: #aaaaaa;
+  letter-spacing: 3px;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  display: flex;              /* Places items side by side */
+  justify-content: space-between; /* Logo on left, links on right */
+  align-items: center;        /* Vertically centered */
+  padding: 20px 60px;
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #222;  /* Subtle bottom line */
+  position: fixed;            /* Stays at top when you scroll */
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 1000;              /* Sits above everything else */
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  color: #ffffff;
+}
+
+.nav-links {
+  list-style: none;           /* Removes bullet points */
+  display: flex;
+  gap: 40px;                  /* Space between each link */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #cccccc;
+  text-decoration: none;      /* Removes underline */
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;     /* Smooth color change on hover */
+}
+
+.nav-links a:hover {
+  color: #ffffff;             /* Turns white when you hover */
+}
+
+/* ── HERO SECTION ── */
+.hero {
+  background-image: url('Images/m3-1.jpg');   /* Your BMW image */
+  background-size: cover;              /* Stretches to fill the screen */
+  background-position: center;         /* Keeps the car centered */
+  background-repeat: no-repeat;
+  height: 100vh;                       /* 100% of screen height */
+  display: flex;
+  flex-direction: column;              /* Stacks heading, text, button */
+  justify-content: center;            /* Centers content vertically */
+  align-items: center;                /* Centers content horizontally */
+  position: relative;
+}
+
+/* Dark overlay so text is readable over the image */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);  /* 50% black overlay */
+}
+
+/* Makes sure text appears ABOVE the dark overlay */
+.hero h1,
+.hero p,
+.hero .cta-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-btn {
+  margin-top: 30px;
+  padding: 14px 40px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;       /* Smooth effect on hover */
+}
+
+.cta-btn:hover {
+  background-color: #ffffff;
+  color: #000000;             /* Inverts on hover — white fills in */
+}
